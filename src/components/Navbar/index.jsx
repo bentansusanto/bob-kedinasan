@@ -22,7 +22,7 @@ const Navbar = () => {
         {
             isMobile ? 
             // Mobile View
-            (<div className='relative'>
+            (<div className='relative z-20'>
                 <div className='flex fixed top-0 w-full bg-white items-center justify-between px-3 py-4 shadow-md'>
                     {
                         open? (<IoClose className="text-2xl" onClick={() => setOpen(false)}/>) : (<IoMenu onClick={handleOpenNav} className="text-2xl"/>)
