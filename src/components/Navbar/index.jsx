@@ -5,9 +5,9 @@ import {IoMenu, IoClose} from 'react-icons/io5'
 import { handleWhatsappMessage } from '../../Data/ConnectWA'
 
 const links = [
-    {section : "About", link : "/#about"},
-    {section : "About", link : "/#about"},
-    {section : "About", link : "/#about"}
+    {section : "About Us", link : "/#about"},
+    {section : "Our Service", link : "/#service"},
+    {section : "Our Package", link : "/#package"}
 ]
 
 const Navbar = () => {

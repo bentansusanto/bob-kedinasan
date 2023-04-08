@@ -25,7 +25,7 @@ const PackageSection = ({isMobile}) => {
       }, [messageSent, phoneNumber, productName])
 
   return (
-    <div className='mt-40'>
+    <div className='mt-40' id="package">
         {
             isMobile? 
             // Mobile View

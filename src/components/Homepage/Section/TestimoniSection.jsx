@@ -2,7 +2,7 @@ import React from 'react'
 
 const TestimoniSection = ({isMobile}) => {
   return (
-    <div className='mt-40'>
+    <div className='mt-40' id='testimoni'>
         {
             isMobile ? 
             // Mobile View
