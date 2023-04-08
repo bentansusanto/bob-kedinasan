@@ -1,9 +1,29 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { listPackage } from '../../../Data/ListPackage'
 import CheckList from '../../../assets/check-circle.svg'
 import '../../../index.css'
 
 const PackageSection = ({isMobile}) => {
+    const [productName, setProductName] = useState('');
+    const phoneNumber = "+628812518233"
+    const [messageSent, setMessageSent] = useState(false);
+
+    const handleOrder = (title) => {
+        setProductName(title)
+        setMessageSent(false)
+      }
+    
+        const handleOrderMessage = () => {
+          setMessageSent(!messageSent);
+        }
+    
+      useEffect(() => {
+        if(messageSent !== null) {
+          const message = `Halo, saya mau bertanya untuk ${productName}`;
+          window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank'); 
+        }
+      }, [messageSent, phoneNumber, productName])
+
   return (
     <div className='mt-40'>
         {
@@ -14,7 +34,7 @@ const PackageSection = ({isMobile}) => {
                 <div className='mt-10 grid grid-cols-1 gap-5 bg-cyan-200 rounded-md p-3'>
                     {
                         listPackage.map((val, idx) => (
-                            <div key={idx} className="bg-white rounded-md pb-5">
+                            <div key={idx} className="bg-white rounded-md pb-5" onClick={() => handleOrder(val.title)}>
                                 <div className='from-cyan-600 bg-gradient-to-r rounded-t-md to-cyan-500 w-full py-3'>
                                     <h4 className='text-white font-semibold text-center text-[18px]'>{val.title}</h4>
                                 </div>
@@ -24,7 +44,7 @@ const PackageSection = ({isMobile}) => {
                                         <p className='text-[13px] font-semibold'>Harga paket</p>
                                         <p className='text-[18px] text-red-500 font-semibold pt-2'>{val.price}</p>
                                     </div>
-                                    <div>
+                                    <div onClick={handleOrderMessage} disabled={!productName || messageSent}>
                                         <button className='bg-orange-500 p-3 rounded-full font-semibold text-white'>Beli Paket</button>
                                     </div>
                                 </div>
