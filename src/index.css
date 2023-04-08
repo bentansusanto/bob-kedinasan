@@ -13,3 +13,5 @@ body{
 p, li, button{
   @apply text-[15px] outline-none
 }
+
+
