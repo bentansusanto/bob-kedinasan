@@ -6,8 +6,8 @@ import { handleWhatsappMessage } from '../../Data/ConnectWA'
 
 const links = [
     {section : "About Us", link : "/#about"},
-    {section : "Our Service", link : "/#service"},
-    {section : "Our Package", link : "/#package"}
+    {section : "Service", link : "/#service"},
+    {section : "Package", link : "/#package"}
 ]
 
 const Navbar = () => {
